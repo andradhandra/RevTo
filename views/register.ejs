@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RevTo Register</title>
+  <%- include('./includes/dependencies.ejs') %> 
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col" style="text-align: center;">
+            <h1>Login RevTo</h1>
+            <a href="#">skip login</a>
+            <form action="/login">
+              <label for="username">Username</label><br>
+              <input type="text" name="username" id="username" required><br>
+              <br>
+              <label for="password">Password</label><br>
+              <input type="password" name="password" id="password" required><br>
+              <br>
+              <input type="submit" value="Login"><br>
+              <br>
+            </form>
+            <!-- for trial only erase when database can be accessed -->
+          </div>
+        </div>
+        <div class="row" style="text-align: center;">
+          <div class="col" style="text-align: center;">
+            <p>Don't have account?  <a href="/register">CLICK HERE</a>  to register</p> <br>
+            <p><a href="/">go back HOME</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+  <footer>
+    <%- include('./includes/scripts.ejs') %> 
+  </footer>
+</body>
+</html>
