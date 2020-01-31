@@ -14,5 +14,5 @@ module.exports = (sequelize, DataTypes) => {
     Restaurant.hasMany(models.Review)
     Restaurant.belongsToMany(models.User, {through: models.Review})
   };
-  return restaurant;
+  return Restaurant;
 };

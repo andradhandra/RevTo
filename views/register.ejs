@@ -6,30 +6,36 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="margin: 200px;">
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <div class="row">
           <div class="col" style="text-align: center;">
-            <h1>Login RevTo</h1>
-            <a href="#">skip login</a>
-            <form action="/login">
+            <h1>Register RevTo</h1>
+            <form action="/register" method="POST">
+              <label for="firstname">First Name</label><br>
+              <input type="text" name="firstname" id="firstname" placeholder="Required" required><br>
+              <br>
+              <label for="last_name">Last Name</label><br>
+              <input type="text" name="lastname" id="lastname" placeholder="Optional"><br>
+              <br>
               <label for="username">Username</label><br>
-              <input type="text" name="username" id="username" required><br>
+              <input type="text" name="username" id="username" placeholder="Required" required><br>
+              <br>
+              <label for="email">Email</label><br>
+              <input type="text" name="email" id="email" placeholder="Required" required><br>
               <br>
               <label for="password">Password</label><br>
-              <input type="password" name="password" id="password" required><br>
+              <input type="text" name="password" id="password" placeholder="Required" required><br>
               <br>
-              <input type="submit" value="Login"><br>
+              <input type="submit" value="Register"><br>
               <br>
             </form>
-            <!-- for trial only erase when database can be accessed -->
           </div>
         </div>
         <div class="row" style="text-align: center;">
           <div class="col" style="text-align: center;">
-            <p>Don't have account?  <a href="/register">CLICK HERE</a>  to register</p> <br>
-            <p><a href="/">go back HOME</a></p>
+            <p><a href="/login">go back</a></p>
           </div>
         </div>
       </div>

@@ -22,10 +22,12 @@ app.use(session({
 //router
 const router = require('./routes')
 const restaurants = require('./routes/restaurants')
+const users = require('./routes/users')
 
 //routing
 app.use('/', router)
 app.use('/restaurants', restaurants)
+app.use('/users', users)
 
 //listener
 app.listen(PORT, () => console.log("I LOVE YOU", PORT))

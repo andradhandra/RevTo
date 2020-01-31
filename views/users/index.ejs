@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>RevTo Restaurants</title>
+  <title>RevTo User</title>
   <%- include('../includes/dependencies.ejs') %> 
 </head>
 <body>
   <header>
-    <%- include('../includes/navbar.ejs') %> 
+    <%- include('../includes/navbarUser.ejs') %> 
   </header>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        <h3>Restaurant review</h3>
+        <h3>Choose a Resto you want to review!</h3>
+        <h5 style="color: green;"><%= success %></h5>
         <table class="table table-striped">
           <tbody>
             <% restaurants.forEach(resto => { %>
               <tr>
                 <th scope="row" style="vertical-align: middle;"><%= resto.id %></th>
                 <td style="vertical-align: middle;"><img src="<%= resto.picture %>" alt="picture" width="120px" height="100px"></td>
-                <th style="vertical-align: middle;"><a href="/restaurants/<%= resto.id %>/reviews"><%= resto.name %></a></th>
+                <td style="vertical-align: middle;"><a href="/users/<%= UserId %> /<%= resto.id %>/writeReview"><%= resto.name %></a></td>
               </tr>
             <% }) %> 
           </tbody>

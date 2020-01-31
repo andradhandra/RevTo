@@ -3,18 +3,21 @@
    "firstname": "Ahmad",
    "lastname": "Udin",
    "username": "ahmad13",
+   "email": "apa@apa.com",
    "password": "123" 
   },
   {
     "firstname": "Maimunah",
     "lastname": "Maemun",
     "username": "imunkyuun",
+    "email": "api@apa.com",
     "password": "123" 
   },
   {
     "firstname": "Heri",
     "lastname": "Tapiheru",
     "username": "heriheruku",
+    "email": "apo@apa.com",
     "password": "1234" 
   }
 ]

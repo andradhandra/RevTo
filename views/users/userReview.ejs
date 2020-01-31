@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RevTo User Reviews</title>
+  <%- include('../includes/dependencies.ejs') %> 
+</head>
+<body>
+  <header>
+    <%- include('../includes/navbarUser.ejs') %> 
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h3>Click resto to edit your Review Resto!</h3>
+        <h5 style="color: green;"><%= success %></h5>
+        <table class="table table-striped">
+          <tbody>
+            <% reviews.forEach(review => { %>
+              <tr>
+                <th scope="row" style="vertical-align: middle;"><%= review.Restaurant.id %></th>
+                <td style="vertical-align: middle;" ><img src="<%= review.Restaurant.picture %>" alt="picture" width="120px" height="100px"></td>
+                <td style="vertical-align: middle;"><a href="/users/<%= UserId %> /reviews/<%= review.id %>/editReview"><%= review.Restaurant.name %></a></td>
+                <td style="vertical-align: middle;"><a href="/users/<%= UserId %> /reviews/<%= review.id %>/editReview"><%= review.review %></a></td>
+                <td style="vertical-align: middle;"><%= showVerdict(review.verdict)%></td>
+                <td style="vertical-align: middle;"><a href="/users/<%= UserId %> /reviews/<%= review.id %>/deleteReview">Delete Review</a></td>
+              </tr>
+            <% }) %> 
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+  <footer>
+    <%- include('../includes/scripts.ejs') %> 
+    
+  </footer>
+</body>
+</html>

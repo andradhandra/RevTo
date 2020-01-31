@@ -9,11 +9,21 @@ module.exports = (sequelize, DataTypes) => {
     RestaurantId: DataTypes.INTEGER,
     review: DataTypes.STRING,
     verdict: DataTypes.INTEGER
-  }, {sequelize});
-  review.associate = function(models) {
+  }, {
+    sequelize,
+    hooks: {
+      beforeCreate: (review, options) => {
+        if(!review.review) review.review = "Waiting to be reviewed..."
+      },
+      beforeBulkUpdate: (review, options) => {
+        if(!review.review) review.review = "Waiting to be reviewed..."
+      }
+    }
+  });
+  Review.associate = function(models) {
     // associations can be defined here
     Review.belongsTo(models.User)
     Review.belongsTo(models.Restaurant)
   };
-  return review;
+  return Review;
 };

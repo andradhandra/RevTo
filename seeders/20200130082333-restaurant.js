@@ -17,7 +17,7 @@ module.exports = {
       }], {});
     */
    
-    return queryInterface.bulkInsert('restaurants', data, {})
+    return queryInterface.bulkInsert('Restaurants', data, {})
   },
 
   down: (queryInterface, Sequelize) => {
@@ -29,7 +29,7 @@ module.exports = {
       return queryInterface.bulkDelete('People', null, {});
     */
 
-   return queryInterface.bulkDelete('restaurants', null, {});
+   return queryInterface.bulkDelete('Restaurants', null, {});
 
   }
 };

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RevTo User Reviews</title>
+  <%- include('../includes/dependencies.ejs') %> 
+</head>
+<body>
+  <header>
+    <%- include('../includes/navbar.ejs') %> 
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h3>Reviews Resto</h3>
+        <table class="table table-striped">
+          <tbody>
+            <% reviews.forEach(review => { %>
+              <tr>
+                <th scope="row" style="vertical-align: middle;"><%= review.id %></th>
+                <td style="vertical-align: middle;" ><img src="<%= review.Restaurant.picture %>" alt="picture" width="120px" height="100px"></td>
+                <th style="vertical-align: middle;"><%= review.Restaurant.name %></th>
+                <td style="vertical-align: middle;"><%= review.review %></td>
+                <td style="vertical-align: middle;"><%= showVerdict(review.verdict)%></td>
+              </tr>
+            <% }) %> 
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+  <footer>
+    <%- include('../includes/scripts.ejs') %> 
+    
+  </footer>
+</body>
+</html>
