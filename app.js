@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const session = require('express-session')
-const PORT = 3000
+const port = process.env.PORT || 4000
 
 //view engine
 app.set('view engine', 'ejs')
@@ -30,4 +30,4 @@ app.use('/restaurants', restaurants)
 app.use('/users', users)
 
 //listener
-app.listen(PORT, () => console.log("I LOVE YOU", PORT))
+app.listen(PORT, () => console.log("I LOVE YOU", port))
