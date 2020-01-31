@@ -1,0 +1,33 @@
+const express = require('express')
+const app = express()
+const session = require('express-session')
+const port = process.env.PORT || 4000
+
+//view engine
+app.set('view engine', 'ejs')
+
+//body parser
+app.use(express.urlencoded({ extended: false}))
+
+//static
+app.use(express.static(__dirname + '/public'))
+
+//session
+app.use(session({
+  secret: 'REView resTO',
+  resave: false,
+  saveUninitialized: true
+}))
+
+//router
+const router = require('./routes')
+const restaurants = require('./routes/restaurants')
+const users = require('./routes/users')
+
+//routing
+app.use('/', router)
+app.use('/restaurants', restaurants)
+app.use('/users', users)
+
+//listener
+app.listen(PORT, () => console.log("I LOVE YOU", port))
