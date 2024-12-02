@@ -19,7 +19,7 @@
   "homepage": "https://github.com/andradhandra/RevTo#readme",
   "dependencies": {
     "ejs": "^3.0.1",
-    "express": "^4.17.1",
+    "express": "^4.21.1",
     "pg": "^7.18.1",
     "sequelize": "^5.21.3"
   }
